@@ -21,7 +21,7 @@ hr { border: 0; }
 .slogan dl dd { font-family: "Pretendard-Regular"; color: #fff; }
 .slogan a { font-family: "Roboto", sans-serif; color: #fff; }
 .textMove { font-family: "Roboto", sans-serif; font-weight: Bold; }
-#artists { font-family: "Roboto", sans-serif; }
+.artists { font-family: "Roboto", sans-serif; }
 .artistName { font-family: "Pretendard-Regular"; }
 #sliderStarship {  font-family: "Roboto", sans-serif; font-weight: bold; }
 #business hgroup  { font-family: "Roboto", sans-serif; }
@@ -84,7 +84,7 @@ hr { border: 0; }
 .slogan dl dt span { position: relative; z-index: 99; font-size: 118px; }
 .slogan dl dd { position: relative; z-index: 97; font-size: 30px;  padding: 70px 30px; }
 .slogan a { position: absolute; left: 50%; transform: translate(150%, -100px);
-            width: 164px; height: 44px; 
+            width: 164px; height: 44px; z-index: 99;
             font-size: 16px; background-color: #3680FB; margin: -40px -34px;
             text-align: center; line-height: 44px; text-transform: uppercase; } 
 .textMove {  display: flex; width: 200%; position: absolute; height: 40%;}   
@@ -97,26 +97,55 @@ hr { border: 0; }
     .slogan dl { flex-direction: column; align-items: center; }
     .slogan dl dd { transform: translateX(-40%); }
 }
+@media screen and ( min-width: 1031px ) {
+    .slogan dl dt{ font-size: 150px; }
+    .slogan dl dt span { font-size:  85px; }
+    .slogan dl dd { font-size: 23px; transform: translateX(-30%); }
+    .slogan a { transform: translate(120%, -170%) }
+    .textMove { display: flex; position: absolute; top: 320px; }
+    .textMove p { font-size: 231px;  }
+}
+@media screen and ( min-width: 728px ){ 
 
+}
 
 /* 메인 시작 */
 /* artists 시작 */
-#artists { width: 100%; background-image: linear-gradient(to bottom right, #EFE1FD 56%, white 44% ); }
-#artists hgroup p { font-size: 60px; text-transform: uppercase; margin-bottom: 113px; text-align: center; padding-top: 215px; }
-#artists ul {  display: flex; flex-wrap: wrap; justify-content: center; position: relative; z-index: 1;}
-#artists ul li { margin-bottom: 56px; margin-left: 116px; position: relative; right: 50px;  overflow: hidden;}
-#artists ul li img { display: block; width: 300px; height: 300px; right: 300px; transition: filter 0.3s ease; transition: transform 0.3s ease; }
-#artists ul li:hover img { filter: grayscale(100%); transform: scale(1.1); transition-duration: 0.5s; }
-#artists #artistMore {   width: 164px; height: 44px;   text-align: center; margin: auto; position: relative;
-                      line-height: 44px; text-transform: uppercase; font-size: 16px; background-color: #3680FB; margin-top: 30px; z-index: 999; }
-#artists #artistMore a{ color: white; } 
-.artist{ position: relative; }
+.artists { width: 100%; height: 100%; min-height: 850px; background-image: linear-gradient(to bottom right, #EFE1FD 56%, white 44% ); position: relative; }
+.artists hgroup p { font-size: 60px; text-transform: uppercase; margin-bottom: 113px; text-align: center; padding-top: 215px; }
+.artists ul {  display: flex; flex-wrap: wrap; justify-content: center; position: relative; z-index: 1;}
+.artists ul li { margin-bottom: 56px; margin-left: 116px; position: relative; right: 50px;   }
+.artists ul li img { display: block; width: 300px; height: 300px; right: 300px; transition: filter 0.3s ease; transition: transform 0.3s ease; }
+.artists ul li:hover img { filter: grayscale(100%); transform: scale(1.1); transition-duration: 0.5s; }
+.artists #artistMore {   width: 164px; height: 44px;   text-align: center; margin: auto; 
+                      line-height: 44px; text-transform: uppercase; font-size: 16px; background-color: #3680FB; margin-top: 30px; position: relative; z-index: 99; }
+.artists #artistMore a{ color: white; } 
 .artist a { display: block; width: 100%; height: 100%; }
-.artist a:hover .artistName{ opacity: 1; transition: 0.5s; }
+.artist a:hover .artistName{ opacity: 1; transition: 0.5s; } 
 .artistName{ position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); opacity: 0; font-size: 40px; color: white; }
-#sliderStarship { display: flex;  width: 200%;  transform: translateX(-20px); top: 1500px; left: -300px; border: 1px solid #000; }
-#sliderStarship p { width: 200%; font-size: 331px; text-transform: uppercase; white-space: nowrap; color: #F8F6FE; border: 1px solid #000; }
+#sliderStarship {  display: flex;  width: 200%;  position: absolute; transform: rotate(-34deg);  z-index: 0; top: 300px; z-index: 0;
+                animation: artistSlogan 25s infinite alternate linear; }
+#sliderStarship p {  width: 200%; font-size: 331px; text-transform: uppercase; white-space: nowrap; color: #F8F6FE; }
+.moveWrap { overflow: hidden; }
 /* artists 끝 */
+
+@keyframes artistSlogan {
+    to { transform: rotate(-34deg) translateX(-100%); }
+}
+
+
+@media screen and ( max-width: 1919px ) {
+     #sliderStarship { display: none; }
+    
+}
+
+
+
+
+
+    
+
+
 
 /* business 시작 */
 #business { width: 100%; height: 100%;  padding-top: 255px; position: relative; overflow: hidden; }
@@ -134,7 +163,11 @@ hr { border: 0; }
 #sliderBox1, #sliderBox2, #sliderBox3, #sliderBox4 { width: 750px; height: 400px; }
 #sliderBox2 a, #sliderBox4 a { position: relative;  height: 40px; width: 150px; top: 113px; }
 /* business 끝 */
+@media screen and ( max-width: 1680px ) { 
 
+
+    
+}
 /* newAlbum 시작 */
 #newAlbum { width: 100%; height: 100%; padding-top: 100px;  overflow: hidden; }
 #newAlbum hgroup { text-align: center; font-size: 60px; text-transform: uppercase; }
@@ -155,6 +188,7 @@ hr { border: 0; }
                       text-indent: 100%; white-space: nowrap; overflow: hidden; }
 #newAlbum div a { margin-right: 30px; }
 /* newAlbum 끝 */
+
 
 /* multimedia 시작 */
 #multimedia { width: 100%; height: 200vh; margin-top: 300px; position: relative; clip-path: polygon(0 0, 100% 9%, 100% 100%, 0 90%); 
@@ -210,7 +244,7 @@ hr { border: 0; }
 /* notice 끝 */
 
 /* auditon 시작 */
-#audition { width: 80%;  height: 100%;  margin: 0 auto; position: relative; margin-top: 200px;
+#audition { width: 80%;  height: 100%;  margin: 0 auto; position: relative; margin-top: 270px;
             background-image: url(../images/audition_light.jpg); background-size: contain; background-repeat: no-repeat; background-position: right; } 
 #auditionWrap { width: 50%; height: 100%;  display: flex; flex-direction: column; align-items: flex-end; }
 #audition hgroup { width: 100%; height: 100%; font-size: 30px; }
@@ -229,7 +263,7 @@ hr { border: 0; }
 
 /* topButton 시작 */
  #topButton { width: 60px; height: 60px; background-color: #3680FB; border-radius: 100%; font-size: 16px; text-transform: uppercase; 
-            float: right; position: relative; top: 230px; }
+            float: right; position: fixed; top: 790px; left: 1780px; z-index: 9999;  }
 #topButton p {  position: absolute; left: 16px; top: 30px; color: white; }
 #topButton img { position: relative; right: -23px; top: 5px; }
 /* topButton 끝 */
