@@ -12,9 +12,10 @@ document.addEventListener('DOMContentLoaded', function () {
         isDragging = true;
         startX = e.clientX;
         slider.style.cursor = 'grabbing';
+        console.log("isDragging")
     });
 
-    document.addEventListener('mousemove', function (e) {
+    slider.addEventListener('mousemove', function (e) {
         if (isDragging) {
             currentX = e.clientX;
             const deltaX = currentX - startX;
@@ -24,10 +25,12 @@ document.addEventListener('DOMContentLoaded', function () {
             businessList.style.transform = `translateX(${transformX}px)`;
             startX = currentX;
         }
+        
     });
 
-    document.addEventListener('mouseup', function (e) {
+    slider.addEventListener('mouseup', function (e) {
         isDragging = false;
         slider.style.cursor = 'grab';
+        console.log("grab")
     });
 });

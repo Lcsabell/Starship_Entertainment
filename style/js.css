@@ -1,0 +1,12 @@
+/* @charset "utf-8";
+
+#main .slogan p { animation: text 10s linear infinite; }
+
+@keyframes text {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+} */

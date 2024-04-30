@@ -12,6 +12,7 @@ a { text-decoration: none; color: #000; }
 address { font-style: normal; }
 .hidden { position: absolute; clip: rect(0 0 0 0); width: 1px; height: 1px; margin: -1px; overflow: hidden; }
 hr { border: 0; }
+html { font-size: 16px; }
 /* 초기화 끝 */
 
 /* 폰트 시작 */
@@ -50,11 +51,10 @@ hr { border: 0; }
 #header h1 { position: absolute; left: 50px; bottom: 40px; width: 145px; height: 53px; }
 
 #header h1 a { width: 145px; height: 53px;
-             overflow: hidden; white-space: nowrap; text-indent: 100%; }
-
-@media screen and ( max-width: 767px ) {
-    #header img { width: 70px; height: 50px; }
-}
+             white-space: nowrap; text-indent: 100%; }
+/* @media screen and (max-width: 768px) {
+    #header h1 {  }
+} */
 
 /* GNB 시작 */
 /* GNB 시작 */
@@ -70,35 +70,31 @@ hr { border: 0; }
 .gnbWrap > li:hover .snb { display: block;  background-color: #3680FB; width: 120px; }
 .gnbWrap > li .snb { display: none; }
 .gnbWrap > li > a:hover { text-decoration: underline; } 
-/* GNB 끝  */
+/* GNB 끝 */
 
-@media screen and ( max-width: 767px ) {
-    #gnb ul { display: none; }
-    #gnb { background-image: url(../images/menuLine.png);  background-repeat: no-repeat; background-size: 30px 15px;
-           position: relative; left: 300px; }
+@media screen and (max-width: 768px) {
+    #gnb { width: 100%; height: 100%; }
+    #gnb ul { background-image: url(../images/menu.png); background-repeat: no-repeat; background-size: 2em;  width: 100%; display: flex; background-position: center right;  margin-top: -0.3em; width: 90%; }
+    #gnb ul li { display: none; }
+    
 
 }
-
-/*
-language 시작 */
+    
+/* language 시작 */
 #language { width: 50px; height: 30px; overflow: hidden; background-image: url(../images/Polygon.png); background-repeat: no-repeat;  position: absolute; background-position: 25px 11px;
-            background-size: 10px; line-height: 30px; right: 80px; top: 35px; }
+            background-size: 10px; line-height: 30px; right: 80px; top: 41px; }
 #language dd { display: flex; align-items: center; right: 70px; top: 47px; }
 #language a { color: white; }
 #language:active { width: 50px; height: 100px; opacity: 1; pointer-events: auto; display: block; }
 /* language 끝 */
 
-@media screen and ( max-width: 767px ) {
-    #language { font-size: 14px; position: absolute; left: 330px; top: 35px;}
-}
-
 /* slogan 시작 */
-.slogan { position: relative; width: 100%; height: 100vh; min-height: 850px; overflow: hidden; background: linear-gradient(180deg, #429BF4 , #D3E2FD 85%, #EFE1FD); 
+.slogan { position: relative; width: 100%;  overflow: hidden; background: linear-gradient(180deg, #429BF4 , #D3E2FD 85%, #EFE1FD); 
          padding-top: 255px; }
 .slogan dl { display: flex; position: relative; justify-content: center; }
 .slogan dl dt { font-size: 200px; line-height: 150px; text-transform: uppercase; padding: 40px 0;   }
 .slogan dl dt span { position: relative; z-index: 99; font-size: 118px; }
-.slogan dl dd { position: relative; z-index: 97; font-size: 30px;  padding: 70px 50px; }
+.slogan dl dd { position: relative; z-index: 97; font-size: 30px;  padding: 70px 30px; }
 .slogan a { position: absolute; left: 50%; transform: translate(150%, -100px);
             width: 164px; height: 44px; z-index: 99;
             font-size: 16px; background-color: #3680FB; margin: -40px -34px;
@@ -106,15 +102,23 @@ language 시작 */
 .textMove {  display: flex; width: 200%; position: absolute; height: 40%;}   
 .textMove p { width: 200%; font-size: 331px; text-transform: uppercase;
              white-space: nowrap; -webkit-text-stroke: 0.5px #fff; color: transparent; }
-
+.slogan .x {display: none;}
 /* slogan 끝 */
 /* 헤더 끝 */
 @media screen and ( max-width: 1680px ) {
     .slogan dl { flex-direction: column; align-items: center; }
     .slogan dl dd { transform: translateX(-40%); }
 }
-
-
+@media screen and (max-width: 768px) {
+    .slogan dl { text-align: center; }
+    .slogan dl dt { font-size:4.5em; line-height: 1em; }
+    .slogan dl dt span { font-size: 0.6em;}
+    .textMove p { font-size: 7em; position: absolute; top: 47px;}
+    .slogan dl dd { padding: 0; margin: 0; width: 70%; font-size: 0.8em; text-align: left; 
+                transform: translate(0%, -35%);  display: none; }
+    .slogan a { transform: translate(-30%, 130%);  }
+    .slogan .x { display: block;}
+}
 
 /* 메인 시작 */
 /* artists 시작 */
@@ -141,52 +145,80 @@ language 시작 */
 }
 
 
-/* @media screen and ( max-width: 1919px ) {
-     #sliderStarship { display: none; }
-    
-} */
+@media screen and ( max-width: 1680px ) {
+     #sliderStarship {display: none; }
+    .artists hgroup p { font-size: 2em; }
+}
 
 /* business 시작 */
-#business { width: 100%; height: 100%;  padding-top: 255px; position: relative; overflow: hidden; }
+
+/* #business { width: 100%; height: 100%;  padding-top: 255px; position: relative; overflow: hidden; }
 #slider { width: 300%; height: 80%;   } 
 #business p { text-align: center; font-size: 60px; text-transform: uppercase; }
-#businessList { width: 100%; font-size: 30px; display: flex; padding: 200px;  }
-#businessList a { position: relative; bottom: 40px; }
-#sliderBox1 { background-image: url(../images/sin-inbalgul.jpg);   background-repeat: no-repeat; background-size: 370px;
+#businessList { width: 100%; height: 100%; font-size: 30px; padding: 200px; display: grid; grid-template-columns: repeat(4, 0.15fr); gap: 10px;  }
+#businessList a { border: 1px solid red; width: 100%; height: 100%; }
+#sliderBox1 { background-image: url(../images/sin-inbalgul.jpg);   background-repeat: no-repeat; background-size: cover; background-position: center;
              }
-#sliderBox2 {  background-image: url(../images/music_publisher.jpg); background-repeat: no-repeat; background-size: 370px;
-             background-position: left bottom;}
-#sliderBox3 { background-image: url(../images/marketing.jpg);   background-repeat: no-repeat; background-size: 370px; }
-#sliderBox4 {  background-image: url(../images/core_competencies.jpg); background-repeat: no-repeat; background-size: 370px 255px;
-            background-position: left  bottom; }
-#sliderBox1, #sliderBox2, #sliderBox3, #sliderBox4 { width: 750px; height: 400px; }
-#sliderBox2 a, #sliderBox4 a { position: relative;  height: 40px; width: 150px; top: 113px; }
+#sliderBox2 {  background-image: url(../images/music_publisher.jpg); background-repeat: no-repeat; background-size: cover; 
+             background-position: center;}
+#sliderBox3 { background-image: url(../images/marketing.jpg);   background-repeat: no-repeat; background-size: cover;  background-position: center;}
+#sliderBox4 {  background-image: url(../images/core_competencies.jpg); background-repeat: no-repeat; background-size: cover; 
+            background-position: center; }
+#sliderBox1, #sliderBox2, #sliderBox3, #sliderBox4 { width: 370px; height: 370px; }
+#sliderBox2 a, #sliderBox4 a { position: relative;  height: 40px; width: 150px; top: 113px; } */
+
+
+#business { width: 100%; height: 100%;  padding: 250px 0 200px; position: relative; overflow: hidden; }
+#slider { width: 100%; height: 80%; overflow: hidden;  } 
+#business p { text-align: center; font-size: 60px; text-transform: uppercase; }
+#businessList { width: 160%; font-size: 30px; display: flex; gap: 100px; padding: 200px 100px;   }
+#businessList li { width: 40%;  background-repeat: no-repeat; background-size: cover; }
+#sliderBox1 { background-image: url(../images/sin-inbalgul.jpg);   }
+#sliderBox2 { background-image: url(../images/music_publisher.jpg); }
+#sliderBox3 { background-image: url(../images/marketing.jpg); }
+#sliderBox4 { background-image: url(../images/core_competencies.jpg);}
+#sliderBox1, #sliderBox2, #sliderBox3, #sliderBox4 { height: 400px;  }
+#sliderBox2, #sliderBox4 {  transform: translateY(100px);}
+#businessList a { position: relative; bottom: 40px; }
 /* business 끝 */
 
+@media screen and (max-width: 768px) {
+    #sliderBox1, #sliderBox2, #sliderBox3, #sliderBox4 { margin-left: 50px; transform: translate(-50%); } 
+    #business hgroup p { font-size: 2em;}
+    #business li { font-size: 0.8em; margin-top: -100px;  }
+    #sliderBox1, #sliderBox2, #sliderBox3, #sliderBox4 { background-position: center; }
+    #sliderBox1 a, #sliderBox2 a, #sliderBox3 a, #sliderBox4 a { position: relative; top: 50px; }
+}
 /* newAlbum 시작 */
-#newAlbum { width: 100%; height: 100%; padding-top: 100px;  overflow: hidden; }
+#newAlbum { width: 100%; height: 100%;   overflow: hidden;  }
 #newAlbum hgroup { text-align: center; font-size: 60px; text-transform: uppercase; }
-#newAlbum ul { display: flex; justify-content: center; padding-top: 200px;  }
-#newAlbum ul li:nth-child(1) { background-image: url(../images/ive_1080_04.png); width: 1547px; height: 671px; background-repeat: no-repeat; text-indent: -9999px; overflow: hidden;
-                 background-size: 1547px; position: absolute;  }
-#newAlbum ul li:nth-child(2) {background-image: url(../images/mx_1080.png); width: 1547px; height: 671px; background-repeat: no-repeat; text-indent: -9999px; overflow: hidden; 
-                 background-size: 1547px; position: absolute; opacity: 0; } 
-#newAlbum ul li:nth-child(3) { background-image: url(../images/shownu_hyungwon_1080.png); width: 1547px; height: 671px; background-repeat: no-repeat; text-indent: -9999px; overflow: hidden; 
-                 background-size: 1547px; position: relative; opacity: 0;  }
+#newAlbum ul { position: relative; width: 100%; height: 43vw; display: flex; justify-content: center; }
+#newAlbum ul li:nth-child(1) { background-image: url(../images/ive_1080_04.png); width: 100%; height: 100%; background-repeat: no-repeat; text-indent: -9999px; overflow: hidden;
+                 background-size: cover;  position: absolute; left: 0; top: 0;  }
+#newAlbum ul li:nth-child(2) {background-image: url(../images/mx_1080.png); width: 100%; height: 100%; background-repeat: no-repeat; text-indent: -9999px; overflow: hidden; 
+                   opacity: 0; background-size: cover; position: absolute; left: 0; top: 0; } 
+#newAlbum ul li:nth-child(3) { background-image: url(../images/shownu_hyungwon_1080.png); width: 100%; height: 100%; background-repeat: no-repeat; text-indent: -9999px; overflow: hidden; 
+                opacity: 0; background-size: cover;  position: absolute; left: 0; top: 0;}
             
-#newAlbum div { padding-top: 10px; text-align: center; }
+#newAlbum div {  text-align: center; }
 #newAlbum div #album1 { width: 160px; height: 12px; background-color: #3680FB; text-indent: 100%; 
-                       white-space: nowrap; overflow: hidden; display: inline-block; }
+                       overflow: hidden; display: inline-block; }
 #newAlbum div #album2 { display: inline-block; width: 160px; height: 12px; background-color: #000;
-                    text-indent: 100%; white-space: nowrap; overflow: hidden; }
+                    text-indent: 100%; overflow: hidden; }
 #newAlbum div #album3 { display: inline-block; width: 160px; height: 12px; background-color: #000;
-                      text-indent: 100%; white-space: nowrap; overflow: hidden; }
+                      text-indent: 100%;  overflow: hidden; }
 #newAlbum div a { margin-right: 30px; }
 /* newAlbum 끝 */
-
+@media screen and (max-width: 768px) {
+    #newAlbum div {  text-align: center; }
+    #newAlbum div #album1{ width: 13.0208vw; height: 1.3021vw }
+    #newAlbum div #album2 { width: 13.0208vw; height: 1.3021vw; }
+    #newAlbum div #album3 { width: 13.0208vw; height: 1.3021vw; }
+    #newAlbum hgroup { font-size: 2em; margin-bottom: 100px; }
+}
 
 /* multimedia 시작 */
-#multimedia { width: 100%; height: 200vh; margin-top: 300px; position: relative; clip-path: polygon(0 0, 100% 9%, 100% 100%, 0 90%); 
+#multimedia { width: 100%; height: 200vh; margin-top: 300px;  clip-path: polygon(0 0, 100% 9%, 100% 100%, 0 90%); 
             background: linear-gradient(90deg, #EFE1FD, #DDE1FD, #CDE2FD); }
 
 /* M/V 시작 */
@@ -201,11 +233,32 @@ language 시작 */
 #MV dl .baddie { order: 0;  text-indent: -9999px; background-image: url(../images/baddie.jpg); width: 344px; height: 226px; background-repeat: no-repeat; background-size: cover;  }
 #MV dl .beautifulLiar { text-indent: -9999px; background-image: url(../images/monstaX.jpg); width: 344px; height: 226px; background-repeat: no-repeat; background-size: cover;  }
 #MV dl .lastSequence { text-indent: -9999px; background-image: url(../images/Cosmic_girls.jpg); width: 344px; height: 226px; background-repeat: no-repeat; background-size: cover;  }
-#MV dl .cheese { text-indent: -9999px; background-image: url(../images/cravity.jpg); background-repeat: no-repeat; width: 344px; height: 226px; background-size: cover; }
+#MV dl .cheese { text-indent: -9999px; background-image: url(../images/cravity.jpg); background-repeat: no-repeat; width: 100%; height: 226px; background-size: cover; }
 #MV div { width: 164px; height: 44px; background-color: #3680FB; text-align: center; line-height: 44px; text-transform: uppercase; position: relative; top: 130px; }
 #MV div p { color: white; }
 /* M/V 끝 */
+@media screen and (max-width: 768px) {
+    #MV { position: relative;  }
+    #MV ul { display: flex;  flex-direction: column;
+        align-items: center; }
+    #MV ul li { width: 100%; top: 5%; }
+    #MV dl .baddie,
+    #MV dl .beautifulLiar,
+    #MV dl .lastSequence,
+    #MV dl .cheese {
+        width: 100%; 
+        height: 100%; 
+        
+    }
+    #MV hgroup p { margin-top: 10%; font-size: 0.5em }
 
+    #MV dl dt { width: 100%;}
+    #MV dl dd:nth-child(2) { width: 100%; }
+    #MV ul li:nth-child(3), #MV ul li:nth-child(4) { display: none; }
+    #MV div { margin-top: -40%;}
+    #MV dl { font-size: 0.8em;}
+
+}
 /* behind 시작 */
 #behind hgroup { font-size: 60px; text-align: center; text-transform: uppercase; }
 #behind { width: 100%; height: 45%; display: flex; flex-direction: column; justify-content: center; align-items: center;  }
@@ -222,7 +275,17 @@ language 시작 */
 #behind div { width: 164px; height: 44px; background-color: #3680FB; text-align: center; line-height: 44px; text-transform: uppercase; position: relative; top: 130px; }
 #behind div p { color:white } 
 /* behind 끝 */
-
+@media screen and (max-width: 768px) {
+    #behind hgroup p { font-size: 0.5em; }
+    #behind ul { display: flex; flex-direction: column; align-items: center; }
+    #behind ul li {width: 100%; top: 5%;}
+    #behind dl .behind1, #behind dl .behind2 { width: 100%; height: 100%;}
+    #behind dl dt { width: 100%;}
+    #behind dl dd:nth-child(2) { width: 100%;} 
+    #behind ul li:nth-child(3), #behind ul li:nth-child(4) { display: none; }
+    #behind div { margin-top: -40%;}
+    #behind dl { font-size: 0.8em; }
+}
 /* notice 시작 */
 #notice hgroup { text-align: center; font-size: 60px; text-transform: uppercase; margin-top: 150px; margin-bottom: 100px; }
 #notice ul { width: 70%; height: 100%; margin: auto;}
@@ -237,9 +300,35 @@ language 시작 */
             line-height: 44px; text-transform: uppercase; margin: auto; margin-top: 50px; }
 #notice div a { color: white; } 
 /* notice 끝 */
+@media screen and (max-width: 768px) {
+    #notice { position: relative; top: -80px; }
+    #notice hgroup {
+        font-size: 40px; 
+        margin-top: 80px; 
+        margin-bottom: 50px; 
+    }
+
+    #notice ul {
+        width: 100%; 
+    }
+
+    #notice ul li {
+        height: 70px; 
+        font-size: 0.8em; 
+        line-height: 70px; 
+    }
+
+    #notice ul li span {
+        float: right;
+    }
+
+    #notice div {
+        margin-top: 30px; 
+    }
+}
 
 /* auditon 시작 */
-#audition { width: 80%;  height: 100%;  margin: 0 auto; position: relative; margin-top: 270px;
+#audition { width: 80%;  height: 100%;  margin: 0 auto; position: relative; margin-top: 200px;
             background-image: url(../images/audition_light.jpg); background-size: contain; background-repeat: no-repeat; background-position: right; } 
 #auditionWrap { width: 50%; height: 100%;  display: flex; flex-direction: column; align-items: flex-end; }
 #audition hgroup { width: 100%; height: 100%; font-size: 30px; }
@@ -256,9 +345,47 @@ language 시작 */
                      font-size: 24px; line-height: 76px; text-align: center; background-position: right center; position: relative; right: 50px;}
 #audition #auditionBox span { font-size: 18px; position: relative; left: 30px;}
 
+@media screen and ( max-width: 1680px ) {
+    #audition { position: relative; left: 50px;}
+    #auditionWrap { position: relative; left: -130px; }
+}
+@media screen and ( max-width: 1537px ) {
+    #audition { background-size: 600px 500px; }
+    #auditionWrap { position: relative; left: -100px; }
+}
+@media screen and (max-width: 768px) {
+    #audition #auditionBox { width: 150px; height: 30px; position: absolute; 
+                    top: 220px; left: 300px; }
+    #auditionBox p {  position: relative; left: -10px; top: 0;
+               height: 30px; background-size: 40px; border: 1px solid #3680FB; background-color: #3680FB;}
+    #auditionBox span { display: block; position: absolute; top: -175px; float: left; font-size: 2em; }
+    #audition hgroup { 
+        font-size: 20px; 
+    }
+    #audition hgroup p {
+       width: 200%;  font-size: 0.9em; top: 50px;
+    }
+    #sliderAudition { font-size: 80px;}
+    #audition {
+        background-size: 200px; background-position: 170px; margin: 0; padding: 0; position: relative;
+        left: 90px;
+    }
+    #auditionStyle {
+        width: 100%; 
+    }
+    #auditionStyle td, #auditionStyle th {
+        width: 100%; display: block; text-align: left; 
+        padding: 0; margin: 0; position: relative; left: 110px; font-size: 0.8em;
+    }
+    #auditionStyle th { position: relative; top: 50px; left: 15px; }
+    #auditionStyle td { padding-top: 15px; }
+    #auditionStyle td span { font-size: 0.7em; }
+    #auditionStyle #closeUp { font-size: 0.7em; }
+}
+
 /* topButton 시작 */
  #topButton { width: 60px; height: 60px; background-color: #3680FB; border-radius: 100%; font-size: 16px; text-transform: uppercase; 
-            float: right; position: fixed; top: 790px; left: 1780px; z-index: 9999;  }
+            float: right; position: fixed; top: 790px; left: 1780px;  }
 #topButton p {  position: absolute; left: 16px; top: 30px; color: white; }
 #topButton img { position: relative; right: -23px; top: 5px; }
 /* topButton 끝 */
@@ -273,8 +400,8 @@ language 시작 */
 #footer #starshipSns p {  position: relative; top: -15px; left: 55px; }
 #footer #starshipSns ul { display: flex; }
 #footer #starshipSns ul li { margin-left: 50px;  }
-#footer #kingkongSns { float: right; margin-right: 100px; position: relative; top: 150px; left: 547px; }
-#footer #kingkongSns ul { display: flex; } 
+#footer #kingkongSns {   position: relative; top: 150px; display: none;  }
+#footer #kingkongSns ul { display: flex;  border: 1px solid #000; }  
 #footer #kingkongSns ul li { margin-left: 50px; }
 #footer #kingkongSns p { position: relative; top: -15px; left: 55px; }
 #footer ul .facebook { display: block; background-image: url(../images/facebook.png); background-repeat: no-repeat; width: 40px; height: 40px;
@@ -291,6 +418,15 @@ background-image: url(../images/youtube.png);  background-repeat: no-repeat; bac
 background-image: url(../images/navertv.png);  background-repeat: no-repeat; background-position: 5px 2px; }
 #footer #footerText {margin-left: 350px; }
 #footer #samsungro { position: relative; top: 45px;  }
-#footer #secrit { position: relative; top: 190px; }
-#footer address { position: relative; top: 200px; }
+#footer #secrit { position: relative; bottom: -200px;}
+#footer address { position: relative; bottom: -200px;}
 /* footer 끝  */
+@media screen and ( max-width:768px ) {
+    #footer { position: absolute; background-position: 30px 30px; width: 100%; height: 55vh; margin-top: 100px;  }
+    #footer #starshipSns { display: none;}
+    #footer #samsungro { font-size: 0.8em; position: relative; width: 100%; height: 30%;  padding-right: 20px;}
+    #footer #secrit { font-size: 0.8em; position: relative; top: 140px; padding-right: 20px;}
+    #footer address { font-size: 0.8em; position: relative; top: 160px; padding-right: 20px; } 
+    #footer ul li { display: none; }
+    #footer #kingkongSns { display: none; }
+}
